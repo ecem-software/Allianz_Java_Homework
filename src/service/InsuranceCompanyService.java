@@ -3,6 +3,7 @@ package service;
 import model.BankAccount;
 import model.Insurance;
 import model.InsuranceCompany;
+import model.PaymentMovement;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -45,4 +46,18 @@ public class InsuranceCompanyService {
                 ınsuranceCompany.setBankAccountList(bankAccountList);
             }
         }
+
+        public void addPaymentMovementToInsuranceCompany(InsuranceCompany ınsuranceCompany, PaymentMovement paymentMovement){
+        if(ınsuranceCompany.getPaymentMovementList()!=null){
+            ınsuranceCompany.getPaymentMovementList().add(paymentMovement);
+        }
+        else{
+            ArrayList<PaymentMovement> paymentMovementList =new ArrayList<>();
+            paymentMovementList.add(paymentMovement);
+            ınsuranceCompany.setPaymentMovementList(paymentMovementList);
+
+
+        }
+        }
+
 }
