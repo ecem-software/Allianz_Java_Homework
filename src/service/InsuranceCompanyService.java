@@ -4,7 +4,6 @@ import model.BankAccount;
 import model.Insurance;
 import model.InsuranceCompany;
 import model.PaymentMovement;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
