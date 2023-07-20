@@ -22,6 +22,7 @@ public class InsuranceCompany {
     }
 
     public InsuranceCompany() {
+
     }
 
     public String getName() {

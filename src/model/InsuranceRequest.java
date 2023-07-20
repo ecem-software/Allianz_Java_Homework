@@ -7,13 +7,13 @@ public class InsuranceRequest {
     private Vehicle vehicle;
     private Policy policy;
 
-
-    public InsuranceRequest() {
-    }
-
     public InsuranceRequest(Vehicle vehicle, Policy policy) {
         this.vehicle = vehicle;
         this.policy = policy;
+    }
+
+    public InsuranceRequest() {
+
     }
 
     public ArrayList<Proposal> getProposalList() {

@@ -9,14 +9,14 @@ public class Accident {
     private BigDecimal damagePrice;
     private int failureRate;
 
-    public Accident() {
-    }
-
     public Accident(Date accidentDate, String description, BigDecimal damagePrice, int failureRate) {
         this.accidentDate = accidentDate;
         this.description = description;
         this.damagePrice = damagePrice;
         this.failureRate = failureRate;
+    }
+
+    public Accident() {
     }
 
     public Date getAccidentDate() {

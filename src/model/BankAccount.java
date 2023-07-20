@@ -7,7 +7,12 @@ public class BankAccount {
     private String iban;
     private BigDecimal amount;
 
-    public BankAccount() {
+    public BankAccount() {  }
+
+    public BankAccount(String name, String iban, BigDecimal amount) {
+        this.name = name;
+        this.iban = iban;
+        this.amount = amount;
     }
 
     public String getName() {

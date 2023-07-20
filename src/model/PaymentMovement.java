@@ -9,15 +9,6 @@ public class PaymentMovement {
     private MovementType movementType;
     private BigDecimal amount;
 
-    public PaymentMovement() {
-    }
-
-    public PaymentMovement(BankAccount bankAccount, String description, MovementType movementType, BigDecimal amount) {
-        this.bankAccount = bankAccount;
-        this.description = description;
-        this.movementType = movementType;
-        this.amount = amount;
-    }
 
     public BankAccount getBankAccount() {
         return bankAccount;

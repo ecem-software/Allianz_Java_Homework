@@ -2,6 +2,9 @@ package service;
 
 import model.Agency;
 import model.BankAccount;
+import model.Customer;
+import model.InsuranceCompany;
+
 import java.math.BigDecimal;
 
 public class BankAccountService {
@@ -13,12 +16,71 @@ public class BankAccountService {
         return bankAccount;
     }
 
-    public BankAccount getAgencyBankAccountWithEnoughMoney(Agency Agency, BigDecimal amount) {
-        for (BankAccount bankAccount : Agency.getBankAccountList()) {
+
+    public BankAccount getBankAccountWithEnoughMoney(Customer bankAccountOwner, BigDecimal amount) {
+
+        for (BankAccount bankAccount : bankAccountOwner.getBankAccountList()) {
             if (bankAccount.getAmount().compareTo(amount) >= 0) {
                 return bankAccount;
             }
         }
         return null;
     }
+
+    public BankAccount getBankAccountWithEnoughMoney(Agency bankAccountOwner, BigDecimal amount) {
+
+        for (BankAccount bankAccount : bankAccountOwner.getBankAccountList()) {
+            if (bankAccount.getAmount().compareTo(amount) >= 0) {
+                return bankAccount;
+            }
+        }
+        return null;
+    }
+
+    public BankAccount getBankAccountWithEnoughMoney(InsuranceCompany bankAccountOwner, BigDecimal amount) {
+
+        for (BankAccount bankAccount : bankAccountOwner.getBankAccountList()) {
+            if (bankAccount.getAmount().compareTo(amount) >= 0) {
+                return bankAccount;
+            }
+        }
+        return null;
+    }
+
+    public BankAccount getBankAccountToSendMoney(Customer bankAccountOwner) {
+        BigDecimal amount = BigDecimal.valueOf(0);
+        BankAccount bankAccountWithMinMoney = null;
+        for (BankAccount bankAccount : bankAccountOwner.getBankAccountList()) {
+            if (bankAccount.getAmount().compareTo(amount) > 0) {
+                bankAccountWithMinMoney = bankAccount;
+                amount = bankAccountWithMinMoney.getAmount();
+            }
+        }
+        return bankAccountWithMinMoney;
+    }
+
+    public BankAccount getBankAccountToSendMoney(Agency bankAccountOwner) {
+        BigDecimal amount = BigDecimal.valueOf(0);
+        BankAccount bankAccountWithMinMoney = null;
+        for (BankAccount bankAccount : bankAccountOwner.getBankAccountList()) {
+            if (bankAccount.getAmount().compareTo(amount) > 0) {
+                bankAccountWithMinMoney = bankAccount;
+                amount = bankAccountWithMinMoney.getAmount();
+            }
+        }
+        return bankAccountWithMinMoney;
+    }
+
+    public BankAccount getBankAccountToSendMoney(InsuranceCompany bankAccountOwner) {
+        BigDecimal amount = BigDecimal.valueOf(0);
+        BankAccount bankAccountWithMinMoney = null;
+        for (BankAccount bankAccount : bankAccountOwner.getBankAccountList()) {
+            if (bankAccount.getAmount().compareTo(amount) > 0) {
+                bankAccountWithMinMoney = bankAccount;
+                amount = bankAccountWithMinMoney.getAmount();
+            }
+        }
+        return bankAccountWithMinMoney;
+    }
+
 }

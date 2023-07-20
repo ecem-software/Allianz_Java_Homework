@@ -1,22 +1,23 @@
 package model;
 
 public class Insurance {
-    private InsuranceTypeEnum insuranceTypeEnum;
+    private InsuranceType insuranceTypeEnum;
     private String name;
 
-    public Insurance() {
-    }
-
-    public Insurance(InsuranceTypeEnum insuranceTypeEnum, String name) {
+    public Insurance(InsuranceType insuranceTypeEnum, String name) {
         this.insuranceTypeEnum = insuranceTypeEnum;
         this.name = name;
     }
 
-    public InsuranceTypeEnum getInsuranceTypeEnum() {
+    public Insurance() {
+
+    }
+
+    public InsuranceType getInsuranceTypeEnum() {
         return insuranceTypeEnum;
     }
 
-    public void setInsuranceTypeEnum(InsuranceTypeEnum insuranceTypeEnum) {
+    public void setInsuranceTypeEnum(InsuranceType insuranceTypeEnum) {
         this.insuranceTypeEnum = insuranceTypeEnum;
     }
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Customer {
     private String name;
-    private CustomerTypeEnum customerTypeEnum;
+    private CustomerType customerTypeEnum;
     private ArrayList<BankAccount> bankAccountList;
     private ArrayList<InsuranceRequest> insuranceRequestList;
     private ArrayList<Policy> policyList;
@@ -14,7 +14,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, CustomerTypeEnum customerTypeEnum) {
+    public Customer(String name, CustomerType customerTypeEnum) {
         this.name = name;
         this.customerTypeEnum = customerTypeEnum;
     }
@@ -27,11 +27,11 @@ public class Customer {
         this.name = name;
     }
 
-    public CustomerTypeEnum getCustomerTypeEnum() {
+    public CustomerType getCustomerTypeEnum() {
         return customerTypeEnum;
     }
 
-    public void setCustomerTypeEnum(CustomerTypeEnum customerTypeEnum) {
+    public void setCustomerTypeEnum(CustomerType customerTypeEnum) {
         this.customerTypeEnum = customerTypeEnum;
     }
 
@@ -73,5 +73,18 @@ public class Customer {
 
     public void setVehicleList(ArrayList<Vehicle> vehicleList) {
         this.vehicleList = vehicleList;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", customerTypeEnum=" + customerTypeEnum +
+                ", bankAccountList=" + bankAccountList +
+                ", insuranceRequestList=" + insuranceRequestList +
+                ", policyList=" + policyList +
+                ", paymentMovementList=" + paymentMovementList +
+                ", vehicleList=" + vehicleList +
+                '}';
     }
 }

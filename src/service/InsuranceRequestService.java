@@ -1,19 +1,14 @@
 package service;
 
-import model.InsuranceRequest;
-import model.Policy;
-import model.Proposal;
-import model.Vehicle;
+import model.*;
 
 import java.util.ArrayList;
 
 public class InsuranceRequestService {
-    public InsuranceRequest createInsuranceRequest(Vehicle vehicle, Policy policy) {
+    public InsuranceRequest createInsuranceRequest(Vehicle vehicle) {
         InsuranceRequest insuranceRequest = new InsuranceRequest();
         insuranceRequest.setVehicle(vehicle);
-        insuranceRequest.setPolicy(policy);
         return insuranceRequest;
-
     }
 
     public void addProposalToInsuranceRequest(InsuranceRequest insuranceRequest, Proposal proposal) {
@@ -24,5 +19,16 @@ public class InsuranceRequestService {
             proposalList.add(proposal);
             insuranceRequest.setProposalList(proposalList);
         }
+    }
+
+    public void createAddPolicyToInsuranceRequest(InsuranceRequest insuranceRequest, Proposal proposal) {
+        Policy policy = new Policy();
+        policy.setVehicle(proposal.getVehicle());
+        policy.setInsuranceCompany(proposal.getCompany());
+        policy.setPrice(proposal.getOfferPrice());
+        policy.setStartDate(proposal.getStartDate());
+        policy.setEndDate(proposal.getEndDate());
+        insuranceRequest.setPolicy(policy);
+
     }
 }

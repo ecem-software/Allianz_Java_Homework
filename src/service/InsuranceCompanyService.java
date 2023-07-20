@@ -1,62 +1,48 @@
 package service;
 
-import model.BankAccount;
-import model.Insurance;
-import model.InsuranceCompany;
-import model.PaymentMovement;
+import model.*;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class InsuranceCompanyService {
-    public InsuranceCompany createInsuranceCompanyService(String name, String taxOffice, String taxNumber, String address, BigDecimal commission){
-        InsuranceCompany ınsuranceCompany=new InsuranceCompany();
-        ınsuranceCompany.setName(name);
-        ınsuranceCompany.setTaxOffice(taxOffice);
-        ınsuranceCompany.setTaxNumber(taxNumber);
-        ınsuranceCompany.setAddress(address);
-        ınsuranceCompany.setCommission(commission);
-        return ınsuranceCompany;
-
-
-
+    public InsuranceCompany createInsuranceCompany(String name, String taxOffice, String taxNumber, String address, BigDecimal commission) {
+        InsuranceCompany insuranceCompany = new InsuranceCompany();
+        insuranceCompany.setName(name);
+        insuranceCompany.setTaxOffice(taxOffice);
+        insuranceCompany.setTaxNumber(taxNumber);
+        insuranceCompany.setAddress(address);
+        insuranceCompany.setCommission(commission);
+        return insuranceCompany;
     }
 
-    public void addInsuranceToInsuranceCompany(InsuranceCompany ınsuranceCompany, Insurance ınsurance){
-        if(ınsuranceCompany.getInsuranceList()!=null){
-            ınsuranceCompany.getInsuranceList().add(ınsurance);
+    public void addInsuranceToInsuranceCompany(InsuranceCompany insuranceCompany, Insurance insurance) {
+        if (insuranceCompany.getInsuranceList() != null) {
+            insuranceCompany.getInsuranceList().add(insurance);
+        } else {
+            ArrayList<Insurance> insuranceList = new ArrayList<>();
+            insuranceList.add(insurance);
+            insuranceCompany.setInsuranceList(insuranceList);
         }
-        else{
-            ArrayList<Insurance> ınsuranceList =new ArrayList<>();
-            ınsuranceList.add(ınsurance);
-            ınsuranceCompany.setInsuranceList(ınsuranceList);
+    }
+
+    public void addBankAccountToInsuranceCompany(InsuranceCompany insuranceCompany, BankAccount bankAccount) {
+        if (insuranceCompany.getBankAccountList() != null) {
+            insuranceCompany.getBankAccountList().add(bankAccount);
+        } else {
+            ArrayList<BankAccount> bankAccountList = new ArrayList<>();
+            bankAccountList.add(bankAccount);
+            insuranceCompany.setBankAccountList(bankAccountList);
         }
+    }
 
-        }
-
-        public void addBankAccountToInsuranceCompany(BankAccount bankAccount, InsuranceCompany ınsuranceCompany){
-            if(ınsuranceCompany.getBankAccountList()!=null){
-                ınsuranceCompany.getBankAccountList().add(bankAccount);
-
-            }
-
-            else{
-                ArrayList<BankAccount> bankAccountList=new ArrayList<>();
-                bankAccountList.add(bankAccount);
-                ınsuranceCompany.setBankAccountList(bankAccountList);
-            }
-        }
-
-        public void addPaymentMovementToInsuranceCompany(InsuranceCompany ınsuranceCompany, PaymentMovement paymentMovement){
-        if(ınsuranceCompany.getPaymentMovementList()!=null){
-            ınsuranceCompany.getPaymentMovementList().add(paymentMovement);
-        }
-        else{
-            ArrayList<PaymentMovement> paymentMovementList =new ArrayList<>();
+    public void addPaymentMovementToInsuranceCompany(InsuranceCompany insuranceCompany, PaymentMovement paymentMovement) {
+        if (insuranceCompany.getPaymentMovementList() != null) {
+            insuranceCompany.getPaymentMovementList().add(paymentMovement);
+        } else {
+            ArrayList<PaymentMovement> paymentMovementList = new ArrayList<>();
             paymentMovementList.add(paymentMovement);
-            ınsuranceCompany.setPaymentMovementList(paymentMovementList);
-
-
+            insuranceCompany.setPaymentMovementList(paymentMovementList);
         }
-        }
-
+    }
 }
