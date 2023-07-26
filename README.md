@@ -16,3 +16,14 @@ Clone the repository or download the source code as a ZIP file.
 Add the source code to your Java project's source folder.
 Usage
 To use the Allianz Insurance package model in your Java application, you need to create instances of the Customer, InsuranceRequest, and other relevant classes. Here's a quick example:
+## Features
+The Allianz Insurance package model provides the following features:
+
+Representation of customer information, insurance requests, policies, payment movements, and vehicles.
+Easy integration into existing Java applications.
+## Contributing
+Contributions to this project are welcome. If you find any issues or want to add new features, please submit a pull request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
