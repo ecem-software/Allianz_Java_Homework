@@ -10,16 +10,21 @@ public class Main {
 
     public static void main(String[] args) {
 
+        
+        // Create and initialize an Agency
+
         AgencyService agencyService = new AgencyService();
         Agency agency = agencyService.createAgency("MOM");
         System.out.println(agency.toString());
 
         BankAccountService bankAccountService = new BankAccountService();
         BankAccount bankAccount = bankAccountService.createBankAccount("Ziraat Bankasi", "TR20300000048476353", BigDecimal.ZERO);
-
+  // Add Bank Account to the Agency
         agencyService.addBankAccountToAgency(agency, bankAccount);
         System.out.println(agency.toString());
-
+        
+  // Create and initialize an Insurance
+        
         InsuranceCompanyService insuranceCompanyService = new InsuranceCompanyService();
         InsuranceCompany insuranceCompany = insuranceCompanyService.createInsuranceCompany("Allianz", "727384849",
                 "8234449", "Ankara/ Cankaya", new BigDecimal(8));
@@ -27,6 +32,8 @@ public class Main {
         InsuranceService insuranceService = new InsuranceService();
         Insurance insurance = insuranceService.createInsurance("compulsory traffic insurance", InsuranceType.COMPULSORY_TRAFFIC_INSURANCE);
         insuranceCompanyService.addInsuranceToInsuranceCompany(insuranceCompany, insurance);
+
+         // Create and initialize a Bank Account for Allianz Insurance Company
         BankAccount allianzBankAccount = bankAccountService.createBankAccount("Yapi Kredi Bankasi", "TR20300000048476353", new BigDecimal(1000000));
         insuranceCompanyService.addBankAccountToInsuranceCompany(insuranceCompany, allianzBankAccount);
 
