@@ -3,18 +3,23 @@ package model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+// Class to represent accident information
+
 public class Accident {
     private Date accidentDate;
     private String description;
     private BigDecimal damagePrice;
     private int failureRate;
-
+    
+// Constructor to initialize the accident information
     public Accident(Date accidentDate, String description, BigDecimal damagePrice, int failureRate) {
         this.accidentDate = accidentDate;
         this.description = description;
         this.damagePrice = damagePrice;
         this.failureRate = failureRate;
     }
+
+    // Methods are created for the project.
 
     public Accident() {
     }
