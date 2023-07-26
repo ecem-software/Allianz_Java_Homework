@@ -2,13 +2,13 @@
 #Allianz Insurance Package Model Project
 This project contains a Java package model for Allianz Insurance company to track customer and insurance transactions. The project includes the Customer class to represent customer information, the InsuranceRequest class to represent insurance requests, and other related classes.
 
-1 Contents
-2 Installation
-3 Usage
-4 Features
-5 Contributing
-6 License
-7 Installation
+1. Contents
+2. Installation
+3. Usage
+4. Features
+5. Contributing
+6. License
+7. Installation
 
 To use this package model in your Java project, follow these steps:
 
