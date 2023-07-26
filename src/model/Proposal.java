@@ -3,7 +3,7 @@ package model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
-
+// Class to represent accident information
 public class Proposal {
     private InsuranceCompany company;
     private Vehicle vehicle;
@@ -13,7 +13,8 @@ public class Proposal {
     private LocalDate expireDate;
     private boolean isApproved = false;
     private BigDecimal discountPrice;
-
+    
+// Constructor to initialize the accident information
     public Proposal() {
     }
 
